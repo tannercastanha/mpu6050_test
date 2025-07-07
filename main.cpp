@@ -31,6 +31,8 @@ int main()
     {
         imu_read(acc, gyro);
 
+        // start output mode in raw
+        // when button is pressed, data output mode switches to either raw or filtered
         bool current_button = !gpio_get(BUTTON_PIN);
         if (current_button && !last_button) {
             use_filtered = !use_filtered;
